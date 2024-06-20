@@ -3,7 +3,8 @@ pipeline {
     agent { 
         docker {
             image 'docker' 
-            reuseNode true 
+            reuseNode true
+            arg '-u root -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {

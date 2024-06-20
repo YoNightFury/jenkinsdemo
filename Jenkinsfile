@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+		script{
                 docker.build("jenkinsdemo")
+		}
             }
         }
     }

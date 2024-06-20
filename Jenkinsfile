@@ -1,7 +1,8 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent { 
-        docker { 
+        docker {
+            image 'alpine' 
             reuseNode true 
         }
     }
@@ -9,6 +10,7 @@ pipeline {
         stage('build') {
             agent { 
                 docker{
+                    image 'alpine'
                 }
             }
             steps {

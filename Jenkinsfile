@@ -4,7 +4,7 @@ pipeline {
         docker {
             image 'docker' 
             reuseNode true
-            arg '-u root -v /var/run/docker.sock:/var/run/docker.sock'
+            args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {

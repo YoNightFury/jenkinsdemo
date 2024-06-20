@@ -2,7 +2,7 @@
 pipeline {
     agent { 
         docker {
-            image 'alpine' 
+            image 'docker' 
             reuseNode true 
         }
     }

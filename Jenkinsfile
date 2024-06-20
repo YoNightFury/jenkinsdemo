@@ -1,15 +1,12 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
 	agent { 
-		docker { 
-			image 'maven:3.9.7-eclipse-temurin-21-alpine'
-			args '-u root'
-		}
+		docker
 	}
     stages {
         stage('build') {
             steps {
-                sh  'mvn -e package'
+                docker.build("jenkinsdemo")
             }
         }
     }

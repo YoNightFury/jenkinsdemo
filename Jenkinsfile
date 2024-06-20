@@ -8,11 +8,11 @@ pipeline {
     }
     stages {
         stage('build') {
-            agent { 
-                docker{
-                    image 'alpine'
-                }
-            }
+            // agent { 
+                // docker{
+                 //   image 'alpine'
+                //}
+            // }
             steps {
                 script{
                     docker.build("jenkinsdemo")

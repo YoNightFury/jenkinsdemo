@@ -9,13 +9,13 @@ pipeline {
         stage('build') {
             agent { 
                 docker{
-                    steps {
-                        script{
-                            docker.build("jenkinsdemo")
-                        }
-                    }
-                } 
+                }
             }
-        }
+            steps {
+                script{
+                    docker.build("jenkinsdemo")
+                }
+            }
+        } 
     }
 }

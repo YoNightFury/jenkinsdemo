@@ -1,16 +1,21 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-	agent { 
-		docker
-	}
+    agent { 
+        docker { 
+            reuseNode true 
+        }
+    }
     stages {
         stage('build') {
-            steps {
-		script{
-                docker.build("jenkinsdemo")
-		}
+            agent { 
+                docker{
+                    steps {
+                        script{
+                            docker.build("jenkinsdemo")
+                        }
+                    }
+                } 
             }
         }
     }
 }
-

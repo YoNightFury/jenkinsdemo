@@ -1,15 +1,15 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { 
+    agent {
         docker {
-            image 'docker' 
+            image 'docker'
             reuseNode true
-            args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {
         stage('build') {
-            // agent { 
+            // agent {
                 // docker{
                  //   image 'alpine'
                 //}
@@ -19,6 +19,6 @@ pipeline {
                     docker.build("jenkinsdemo:${BUILD_NUMBER}")
                 }
             }
-        } 
+        }
     }
 }

@@ -16,7 +16,7 @@ pipeline {
             // }
             steps {
                 script{
-                    docker.build("jenkinsdemo:${env.BUILD_NUMBER}")
+                    docker.build("jenkinsdemo:${BUILD_NUMBER}")
                 }
             }
         } 
